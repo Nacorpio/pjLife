@@ -2,6 +2,7 @@ package com.nacorpio.life.api.human;
 
 import com.nacorpio.life.api.IHuman;
 import com.nacorpio.life.api.action.PlannedAction;
+import com.nacorpio.life.api.dna.DNA;
 import com.nacorpio.life.api.human.family.FamilyNode;
 import com.nacorpio.life.api.human.family.HumanNode;
 import com.nacorpio.life.api.human.identity.Identity;
@@ -22,6 +23,7 @@ public class Human extends HomoSapien implements IHuman {
 	private Identity identity;
 	private FamilyNode familyNode;
 	private HumanNode humanNode;
+	private DNA dna;
 	
 	public Human(FamilyNode par1, String par2, String par3, String par4) {
 		this.familyNode = par1;
@@ -81,6 +83,15 @@ public class Human extends HomoSapien implements IHuman {
 	@Override
 	public HumanNode getHumanNode() {
 		return this.humanNode;
+	}
+
+	public final void inheritDNA() {
+		
+	}
+	
+	@Override
+	public DNA getDNA() {
+		return this.dna;
 	}
 
 }

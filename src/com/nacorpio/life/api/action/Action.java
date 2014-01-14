@@ -112,7 +112,7 @@ public abstract class Action implements Runnable, IAction {
 				break;
 			}
 		}	
-		if (stop) {
+		if (stop || !running) {
 			return;
 		}
 		this.onFinished(System.nanoTime());

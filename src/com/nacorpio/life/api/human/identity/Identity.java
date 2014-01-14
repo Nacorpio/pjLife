@@ -3,6 +3,8 @@ package com.nacorpio.life.api.human.identity;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import com.nacorpio.life.factory.PublicBase;
+
 public class Identity {
 
 	private String firstName;
@@ -14,7 +16,7 @@ public class Identity {
 	public Identity(String par1, String par2, String par3) {
 		this.firstName = par1;
 		this.middleName = par2;
-		this.lastName = par3;
+		this.lastName = PublicBase.get(par3).getFamilyName();
 	}
 	
 	public final String getFirstName() {

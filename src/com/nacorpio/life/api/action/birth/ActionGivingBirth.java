@@ -27,6 +27,7 @@ public class ActionGivingBirth extends PlannedAction {
 		// for the baby to be born.
 		
 		int rnd = new Random().nextInt(15);
+		
 		this.time = rnd;
 		this.setTarget(time);
 		

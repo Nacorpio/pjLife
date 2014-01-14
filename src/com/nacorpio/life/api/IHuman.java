@@ -1,5 +1,6 @@
 package com.nacorpio.life.api;
 
+import com.nacorpio.life.api.dna.DNA;
 import com.nacorpio.life.api.human.family.FamilyNode;
 import com.nacorpio.life.api.human.family.HumanNode;
 import com.nacorpio.life.api.human.identity.Identity;
@@ -11,5 +12,7 @@ public interface IHuman extends ICreature {
 	Identity getIdentity();
 	
 	HumanNode getHumanNode();
+	
+	DNA getDNA();
 	
 }

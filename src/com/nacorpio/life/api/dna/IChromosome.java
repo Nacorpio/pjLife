@@ -6,8 +6,12 @@ public interface IChromosome {
 	
 	String getName();
 	
-	void setData(int par1);
+	void setData(int par1, byte par2);
 	
-	int getData();
+	void setData(byte[] par1);
+	
+	byte getData(int par1);
+	
+	byte[] getData();
 	
 }

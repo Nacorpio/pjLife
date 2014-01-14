@@ -29,7 +29,7 @@ public class FamilyNode {
 	public final void setImportanceLevel(int par1) {
 		this.importance_level = par1;
 		if (par1 >= 10) {
-			LoggingUtil.log("An Illuminati family has been created (" + this.getOriginName() + ").");
+			LoggingUtil.log("The family (" + this.getOriginName() + ") is now of importance level (" + par1 + ").");
 		}
 	}
 	
