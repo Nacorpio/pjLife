@@ -31,7 +31,7 @@ public class HumanNode {
 		if (this.getPartner() != par1) {
 			this.partner = par1;
 			par1.getHumanNode().setPartner(this.human);
-			LoggingUtil.log("\'" + this.human.getIdentity().getFirstName() + "\' is now in a relationship with \'" + par1.getIdentity().getFirstName() + "\'.");
+			LoggingUtil.log(human.getName(), "Now in a relationship with \'" + par1.getFullName() + "\'.");
 		}
 	}
 	
