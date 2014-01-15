@@ -2,7 +2,8 @@ package com.nacorpio.life.api.human.physical.workout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
+import com.nacorpio.life.utils.TimeUtil;
 
 public class WorkoutSession {
 
@@ -34,8 +35,8 @@ public class WorkoutSession {
 	public final void endSession() {
 		if (started) {
 			this.session_end = System.nanoTime();
-			this.workout_sec = (int) ((this.session_end - this.session_start) / 1000000000);
-			this.workout_s_sec = (int) ((this.session_end - this.session_latest) / 1000000000);
+			this.workout_sec = (TimeUtil.getSeconds(session_end) - TimeUtil.getSeconds(session_start));
+			this.workout_s_sec = (TimeUtil.getSeconds(session_end) - TimeUtil.getSeconds(session_latest));
 			this.started = false;
 		}
 	}
@@ -69,12 +70,20 @@ public class WorkoutSession {
 		return this.session_latest;
 	}
 	
-	public final int getDuration() {
-		return (int) (System.nanoTime() - this.session_start);
+	public final long getDuration() {
+		return (System.nanoTime() - this.session_start);
 	}
 	
-	public final int getLatestWorkout() {
-		return (int) (System.nanoTime() - this.session_latest);
+	public final int getDurationSeconds() {
+		return TimeUtil.getSeconds(getDuration());
+	}
+	
+	public final long getLatestWorkout() {
+		return (System.nanoTime() - this.session_latest);
+	}
+	
+	public final int getLatestWorkoutSeconds() {
+		return TimeUtil.getSeconds(getLatestWorkout());
 	}
 	
 	public final String getCustomName() {
